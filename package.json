@@ -17,7 +17,8 @@
 		"haml": "~0.4.3"
 	},
 	"devDependencies": {
-		"mocha": "1.8.x"
+		"mocha": "~1.8.x",
+		"underscore": "~1.4.4"
 	},
 	"license": "MIT",
 	"engines": ">=0.6"
