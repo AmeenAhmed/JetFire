@@ -1,0 +1,24 @@
+{
+	"name": "jetpack",
+	"preferGlobal": "true",
+	"version": "0.1.0",
+	"author": "AmeenAhmed <ameen.ahmed.b@gmail.com>",
+	"description": "A rails-like framework for node",
+	"bin": {
+		"jetpack": "./jetpack.js"
+	},
+	"dependencies": {
+		"express": "3.x.x",
+		"colors": "0.6.x",
+		"wrench": "1.4.x",
+		"inflection": "~1.2.5",
+		"ejs": "~0.8.3",
+		"jade": "~0.28.2",
+		"haml": "~0.4.3"
+	},
+	"devDependencies": {
+		"mocha": "1.8.x"
+	},
+	"license": "MIT",
+	"engines": ">=0.6"
+}
