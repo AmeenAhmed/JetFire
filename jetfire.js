@@ -14,6 +14,8 @@ var express = require('express');
 
 
 var app = new express();
+
+
 // Global namespace object 'jetpack'
 var jetpack = {
 	jetpackDir: __dirname,
@@ -32,6 +34,9 @@ global['jetpack'] = jetpack;
 
 jetpack.initApp = function(appDir) {
 	jetpack.app.use(express.static(appDir + '/public'));
+	app.use(express.cookieParser()); 
+	app.use(express.session({cookie: { path: '/', httpOnly: true}, secret:'eeuqram'}));
+	app.use(express.bodyParser());
 };
 
 // Call the cli process with the first arg passed to the jetpack CLI tool.
