@@ -1,5 +1,5 @@
 # JetFire.js
-JetFire is a YARLF ( YET ANOTHER RAILS LIKE FRAMEWORK ). It uses conventions learnt from rails and aims to be a rails alternative to JS Ninjas out there. It has a full stack MVC and a lot of features on the way.
+JetFire is a YARLF ( YET ANOTHER RAILS LIKE FRAMEWORK ). It uses conventions learnt from rails and aims to be a rails alternative for JS Ninjas out there. It has a full stack MVC and a lot of features on the way.
 
 # Installation
 
@@ -72,6 +72,9 @@ module.exports = {
 	'/': 'home#index',
 };
 ```
+
+# Creating the view
+
 Now we need to create a view.
 
 JetFire by default uses <a href="https://github.com/visionmedia/jade">jade</a> 
@@ -100,6 +103,35 @@ Now to create the view. Lets create a file called index.jade in app-folder/app/v
 ```jade
 h1 Hurray we finally see something!!
 ```
+
+Now run the server again using
+
+```sh
+jetfire s
+```
+Now you can see the page says "Hurray we finally see something"
+
+# Generating models
+
+JetFire currently uses <a href="http://www.sequelizejs.com/">sequelize</a> internally for the ORM, which by default supports sqlite, postgres and mysql. ( Mongo through mongoose is on the way!! :) )
+
+to create a model use the following command
+
+```sh
+jetfire g model User name:string email:string
+```
+
+The above command creates a model file @ app-folder/app/models called User.js and also a 
+Create file migration in app-folder/db/migrate and a schema app-folder/db/schema
+
+More documentation on models coming soon...
+
+Roadmap
+--
+- Complete support for Mongo and migrations
+- Asset rack
+- Mongo support
+- Mailer
 
 The MIT License (MIT)
 --
