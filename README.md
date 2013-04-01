@@ -29,6 +29,77 @@ This is the default jetfire homepage.
 
 Now, lets start building our jetfire powered application. I promise it'll be fn ;)
 
+# Generating a controller
+
+```sh
+jefire generate controller home
+```
+
+The above command will create a file called HomeController.js in app-folder/app/controllers. 
+
+An action can be defined inside the controller as follows
+
+```javascript
+module.exports = {
+	index: function($, next) {
+		next();
+	}	
+}
+```
+
+The action accepts 2 params, $ and next. The $ will contain params to be passed to the controller
+and also it can be used to pass template variables to the view from the controller. 
+
+The next function needs to be called after the execution of the controller ends. If the controller has a callback for eg:
+
+```javascript
+module.exports = {
+	index: function($, next) {
+		User.findAll().success(function(users) {
+			next();
+		});
+	}	
+}
+```
+the next function preferebly should be called from inside the inner most callback.
+
+# Defining a route
+
+Route for the home#index can be specified like this,
+
+```javascript
+module.exports = {
+	'/': 'home#index',
+};
+```
+Now we need to create a view.
+
+JetFire by default uses <a href="https://github.com/visionmedia/jade">jade</a> 
+as the templating system. Alternatively you can use <a href="https://github.com/visionmedia/ejs">ejs</a> or <a href="https://github.com/creationix/haml-js">haml</a>
+
+This setting is present in the app config file app-folder/config/application.js
+
+```javascript
+module.exports = {
+	appName: "JetPack App",
+
+	port: "3000",
+
+	env: "development",
+
+	viewEngine: "jade" // also supports ejs and haml
+};
+```
+
+Set viewEngine to ejs or haml to use them for templating. 
+
+Along with the viewEngine the app config also has the port setting and env setting of the app.
+
+Now to create the view. Lets create a file called index.jade in app-folder/app/views/home. This folder is automatically generated when you create the controller. The jade file as follows
+
+```jade
+h1 Hurray we finally see something!!
+```
 
 The MIT License (MIT)
 --
