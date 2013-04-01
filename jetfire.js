@@ -42,7 +42,7 @@ jetpack.initApp = function(appDir) {
 // Call the cli process with the first arg passed to the jetpack CLI tool.
 (function() {
 	console.log('arg : ' + process.argv[2]);
-	cli[process.argv[2]]();
+	(!!cli[process.argv[2]]) ? cli[process.argv[2]] () : null;
 })();
 
 
