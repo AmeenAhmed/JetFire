@@ -128,7 +128,7 @@ More documentation on models coming soon...
 
 Roadmap
 --
-- Complete migration support
+- ~~Complete migration support~~
 - Mongo support
 - Asset pipeline
 - Caching
