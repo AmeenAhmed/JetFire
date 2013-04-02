@@ -128,9 +128,10 @@ More documentation on models coming soon...
 
 Roadmap
 --
-- Complete support for Mongo and migrations
-- Asset rack
+- Complete migration support
 - Mongo support
+- Asset pipeline
+- Caching
 - Mailer
 
 The MIT License (MIT)
